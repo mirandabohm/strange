@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Apr 22 19:26:59 2018
+@author: Upquark00
 
-@author: Mira
+First version of a deck of cards built using an object-oriented approach. 
 """
 
 from random import shuffle, randint
