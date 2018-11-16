@@ -4,9 +4,8 @@ Created on Sun Apr 22 19:26:59 2018
 
 @author: Mira
 """
-#Some lines 
-# Which are different
-# Ain't that the truth. 
+
+# UNICORNS, PONIES, AND SOME MORE THINGS OF THAT NATURE
 
 from random import shuffle, randint
   
