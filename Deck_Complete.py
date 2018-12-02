@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Apr 22 19:26:59 2018
-
+# Test shuttle 
 @author: Mira
 """
-#Some lines 
-# Which are different
-# Ain't that the truth. 
 
 from random import shuffle, randint
   
