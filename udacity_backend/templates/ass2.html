@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<style>
+			.error {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Signup</h2>
+		<form method="post">
+			<table>
+				<tr>
+					<td align="right">Username</td>
+					<td><input type="text" name="username" value={{username}}><br></td>
+					<td class = 'error'>
+						{% if username_okay is sameas true %}
+							<!--Leave blank. Valid password -->
+						{% elif username_okay is none %}
+							That's not a valid username
+						{% else %}
+							<!--Leave blank. Starting condition-->
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Password</td>
+					<td><input type="password" name="password"><br></td>
+					<td class = 'error'>
+						{% if password is sameas false %}
+							Remove spaces and try again.
+						{% elif password is sameas true %}
+							<!--Leave blank. Password OKAY -->
+						{% elif password is none %}
+							That wasn't a valid password.
+						{% else %}
+							<!--Leave blank. Starting condition-->
+						{% endif %}
+					</td>
+				</tr>
+				<tr>		
+					<td align="right">Verify Password</td>		
+					<td><input type="password" name="in_verify"><br></td>
+					<td class = 'error'>
+						{% if passwords_match is sameas true %}
+							<!--Leave blank if no errors.-->
+						{% elif passwords_match is sameas false %}
+							Your passwords didn't match.
+						{% elif passwords_match is none %}
+							<!--Leave blank as in the example--> 
+						{% else %}
+							<!--Leave blank. Starting condition-->
+						{% endif %}	
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Email (optional) </td>
+					<td><input type="text" name="email" value={{user_email}}><br></td>
+					<td class = 'error'>
+						{% if passwords_match is sameas true %}
+							<!--Leave blank if no errors.-->
+						{% elif passwords_match is sameas false %}
+							<!--Leave blank if no errors.-->
+						{% else %}
+							<!--Leave blank. Starting condition-->
+						{% endif %}	
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" name="Submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
