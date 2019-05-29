@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Main Page</title>
+	<style type="text/css">
+		body {
+			    position: relative;
+			    font-family: Helvetica, Arial, sans-serif;
+			    font-size: 14px;
+
+			    width: 800px;
+			    margin: 0 auto;
+			    padding: 10px;
+			    color: #333;
+			}
+			.main-title {
+			    display: block;
+			    color: #222;
+			    font-size: 40px;
+			    font-weight: bold;
+			    text-align: center;
+			    margin-bottom: 30px;
+			    text-decoration: none;
+			}
+			.head-link {
+				display: block;
+			    color: blue;
+			    margin-bottom: 30px;
+			    text-decoration: underline;
+			}	
+			}
+			.post + .post {
+			    margin-top: 15px;
+			}
+
+			.post-heading {
+			    position: relative;
+			    border-bottom: 3px solid #666;
+			}
+			.post-title {
+			    font-size: 24px;
+			    font-weight: bold;
+
+			    text-decoration: none;
+			    color: #333;
+			}
+
+			.post-title:visisted {
+			    color: #333;
+			}
+
+			.post-date {
+			    position: absolute;
+			    right: 0px;
+			    bottom: 0px;
+			    color: #999;
+
+			}
+
+			.post-content {
+			    margin-top: 5px;
+			}
+
+			.age {
+			    position: absolute;
+			    bottom: 0px;
+			    right: 0px;
+			    color: gray;
+			    font-size: 12px;
+			}
+	</style>
+</head>
+<body>
+	<a href="/" class='main-title'>CS 253 Blog</a>
+	<a class= "head-link" href="/newpost">Click here to make a new post</a>
+		{% for blogpost in blogposts %}
+		<div class = "post">
+			<div class= "post-heading">
+				<a href={{blogpost.key().id()}} class="post-title">
+					{{blogpost.subject}}
+				</a>
+
+				<div class = "post-date">
+					{{blogpost.created}}
+				</div>
+			</div>
+
+			<div class = "post-content">
+				{{blogpost.content}}
+			</div>
+		</div>
+		<br><br>
+	{% endfor %}
+</body>
+</html>
+
+
+
+
+<!--
+		<table>
+	{% for blogpost in blogposts %}
+		<div class="post">
+			<td class = 'blogpost_title' width = 70%>
+				{{blogpost.title}}
+			</td>
+			<td class = 'blogpost_created'>
+				{{blogpost.created}}
+			</td>
+		</tr>
+		<tr class = 'blogpost_content'>
+			<td colspan="2">
+				{{blogpost.content}}
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+</
+-->
